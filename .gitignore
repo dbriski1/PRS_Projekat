@@ -1,4 +1,4 @@
 *.opendb
-.vs*
-x64*
+.vs/CudaRuntime1/
+x64/Debug
 WikiTalk.txt
