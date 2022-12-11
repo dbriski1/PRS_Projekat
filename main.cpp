@@ -1,69 +1,128 @@
-//#include "cuda_runtime.h"
-//#include "device_launch_parameters.h"
-//#include "graph.cuh"
-//#include <cstdio>
-//#include <cuda.h>
-//#include "test_1.cu"
+//#include <iostream>
+//#include <vector>
+//#include <list>
+//#include <fstream>
+//#include <string>
 //
-//extern void run(void);
+//class Graph
+//{
+//    int V;
 //
-//int main(int argc, char** argv) {
+//    std::vector<std::list<int>> adj;
+//public:
+//    Graph();
+//
+//    void BFS(int s);
+//
+//    void readGraph();
+//
+//    int getNumberVertices();
+//
+//    friend void convert_to_numeric(std::string value, int& a, int& b);
+//};
+//int Graph::getNumberVertices() {
+//    return V;
+//}
+//
+//Graph::Graph() {
+//
+//}
+//
+//void Graph::BFS(int s)
+//{
+//    std::vector<bool> visited;
+//    visited.resize(V, false);
+//
+//    
+//    std::list<int> queue;
+//
+//    visited[s] = true;
+//    queue.push_back(s);
+//
+//    while (!queue.empty())
+//    {
+//       
+//        s = queue.front();
+//        std::cout << s << " ";
+//        queue.pop_front();
+//
+//        for (auto adjecent : adj[s])
+//        {
+//            if (!visited[adjecent])
+//            {
+//                visited[adjecent] = true;
+//                queue.push_back(adjecent);
+//            }
+//        }
+//    }
+//}
+//
+//void Graph::readGraph() {
+//    int n;
+//    int m;
+//    bool console_input = false;
+//
+//
+//    std::string n_vertices_n_edges;
+//
+//
+//    std::ifstream MyReadFile("p2p-Gnutella08.txt");
+//
+//    if (console_input) {
+//        scanf("%d %d", &n, &m);
+//    }
+//    else {
+//        std::getline(MyReadFile, n_vertices_n_edges);
+//        convert_to_numeric(n_vertices_n_edges, n, m);
+//    }
+//
+//    std::string edge;
+//    adj.resize(n);
+//    V = n;
+//    //std::vector<std::vector<int> > adjecancyLists(n);
+//
+//    for (int i = 0; i < m; i++) {
+//        int u, v;
+//        if (console_input) {
+//            scanf("%d %d", &u, &v);
+//        }
+//        else {
+//            getline(MyReadFile, edge);
+//            convert_to_numeric(edge, u, v);
+//        }
+//        adj[u].push_back(v);
+//    }
+//
+//    MyReadFile.close();
+//}
+//
+//void convert_to_numeric(std::string value, int& a, int& b) {
+//    std::string delimiter = "\t";
+//
+//    size_t pos = 0;
+//    std::string token;
+//    pos = value.find(delimiter);
+//    token = value.substr(0, pos);
+//    value.erase(0, pos + delimiter.length());
+//    a = stoi(token);
+//    b = stoi(value);
+//}
+//
+//
+//
+//int main() {
 //
 //	Graph G;
-//	int startVertex = atoi(argv[1]);
-//	readGraph(G, argc, argv);
+//	G.readGraph();
 //
-//	/*std::vector<int> distance;
-//	std::vector<int> parent;
-//	std::fill(distance.begin(), distance.end(), std::numeric_limits<int>::max());
-//	std::fill(parent.begin(), parent.end(), std::numeric_limits<int>::max());*/
-//
-//	printf("Number of vertices %d\n", G.numVertices);
-//	printf("Number of edges %d\n\n", G.numEdges);
+//	printf("Number of vertices %d\n", G.getNumberVertices());
 //
 //
 //	//vectors for results
-//	std::vector<int> resultVector(G.numVertices, std::numeric_limits<int>::max());
-//	int N = G.numVertices;
-//
-//	bool* h_test;
-//
-//	cudaMalloc(&h_test, N * sizeof(bool));
-//	for (int k = 0; k < N; k++) h_test[k] = true;
-//
-//	int* k_still_running = new int(1);
-//	//cudaMalloc(&k_still_running, N * sizeof(bool));
-//
-//	int* still_running = new int(1);
-//	//cudaMalloc(&still_running, N * sizeof(bool));
+//	std::vector<int> resultVector(G.getNumberVertices(), std::numeric_limits<int>::max());
+//	int N = G.getNumberVertices();
+//	G.BFS(0);
 //
 //
-//	int BLOCKS = 1;
-//	dim3 THREADS(N, N);
-//
-//	int* adj_length = &(*G.edgesSize.begin());
-//	int* adj_list = &(*G.adjacencyList.begin());
-//	int* adj_begin = &(*G.edgesOffset.begin());
-//	int* result = &(*resultVector.begin());
-//
-//
-//
-//	while (*still_running) {
-//		{
-//			*still_running = 0;
-//			*k_still_running = 0;
-//			cudaMemcpy(&k_still_running, &h_test, sizeof(bool) * 1, cudaMemcpyHostToDevice);
-//			int* args[] = { &N, adj_length,adj_list, adj_begin, result, still_running };
-//			//kernel_cuda_simple <<<BLOCKS, THREADS>>> (N, adj_length,adj_list, adj_begin, result, still_running);
-//			cudaLaunchKernel(&kernel_cuda_simple, G.numVertices / 1024 + 1, 1024, 1, args, 0, 0);
-//			cudaLaunchKernel()
-//			cudaMemcpy(still_running, k_still_running, sizeof(bool) * 1, cudaMemcpyDeviceToHost);
-//		}
-//	}
-//
-//	cudaThreadSynchronize();
-//	cudaFree(still_running);
-//	cudaFree(k_still_running);
-//	cudaFree(h_test);
 //	return 0;
 //}

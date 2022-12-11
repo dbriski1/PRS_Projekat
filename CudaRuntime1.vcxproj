@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CudaCompile Include="kernel.cu" />
-    <CudaCompile Include="test_1.cu" />
+    <CudaCompile Include="bfs_run.cu" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="graph.cuh" />

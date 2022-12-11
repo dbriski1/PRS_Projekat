@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-void convert_to_numeric(std::string value, int& a, int& b) {
+void convert_to_numeric(std::string value, long int& a, long int& b) {
     std::string delimiter = "\t";
 
     size_t pos = 0;
@@ -17,8 +17,8 @@ void convert_to_numeric(std::string value, int& a, int& b) {
 }
 
 void readGraph(Graph& G) {
-    int n;
-    int m;
+    long int n;
+    long int m;
     bool console_input = false;
 
     
@@ -26,6 +26,7 @@ void readGraph(Graph& G) {
 
     
     std::ifstream MyReadFile("p2p-Gnutella08.txt");
+    //std::ifstream MyReadFile("WikiTalk.txt");
     
     
 
@@ -49,10 +50,10 @@ void readGraph(Graph& G) {
         m = atoi(argv[3]);
     }*/
     std::string edge;
-    std::vector<std::vector<int> > adjecancyLists(n);
+    std::vector<std::vector<long int> > adjecancyLists(n);
     
-    for (int i = 0; i < m; i++) {
-        int u, v;
+    for (long int i = 0; i < m; i++) {
+        long int u, v;
         if (console_input) {
             scanf("%d %d", &u, &v);
         }
@@ -71,7 +72,7 @@ void readGraph(Graph& G) {
 
     MyReadFile.close();
 
-    for (int i = 0; i < n; i++) {
+    for (long int i = 0; i < n; i++) {
         G.edgesOffset.push_back(G.adjacencyList.size());
         G.edgesSize.push_back(adjecancyLists[i].size());
         for (auto& edge : adjecancyLists[i]) {
