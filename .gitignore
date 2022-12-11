@@ -1,4 +1,3 @@
 *.opendb
 .vs/CudaRuntime1/
 x64/Debug
-WikiTalk.txt
