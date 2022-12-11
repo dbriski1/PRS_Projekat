@@ -78,7 +78,6 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="kernel.cu" />
     <CudaCompile Include="bfs_run.cu" />
   </ItemGroup>
   <ItemGroup>
@@ -86,10 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graph.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\p2p-Gnutella08.txt" />
+    <Text Include="WikiTalk.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
