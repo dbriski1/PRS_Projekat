@@ -1,1 +1,2 @@
 C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1\x64\Debug\CudaRuntime1.exe
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\x64\Debug\CudaRuntime1.exe

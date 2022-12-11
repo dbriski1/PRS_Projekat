@@ -1,6 +1,19 @@
 ﻿  Compiling CUDA source file test_1.cu...
   
-  C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64" -x cu   -IC:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1 -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd " -o C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1\x64\Debug\test_1.cu.obj "C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1\test_1.cu" 
+  C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\bin\HostX64\x64" -x cu   -IC:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd " -o C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\x64\Debug\test_1.cu.obj "C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu" 
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(56): warning #177-D: variable "d_level" was declared but never referenced
+  
   test_1.cu
-C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1\test_1.cu(112): warning C4996: 'cudaThreadSynchronize': was declared deprecated
-  CudaRuntime1.vcxproj -> C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1\x64\Debug\CudaRuntime1.exe
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(87): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(87): note: consider using '%zd' in the format string
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(88): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(88): note: consider using '%zd' in the format string
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(89): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(89): note: consider using '%zd' in the format string
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(131): warning C4244: 'initializing': conversion from '_Rep' to 'long', possible loss of data
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\test_1.cu(56): warning C4101: 'd_level': unreferenced local variable
+  CudaRuntime1.vcxproj -> C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat\x64\Debug\CudaRuntime1.exe

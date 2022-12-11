@@ -55,7 +55,7 @@
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
-      <Include>C:\Users\muhar\Desktop\PRS\CUDA_Projekat\CudaRuntime1;%(Include)</Include>
+      <Include>C:\Users\muhar\Desktop\PRS\CUDA_Projekat\PRS_Projekat;%(Include)</Include>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -87,6 +87,9 @@
   <ItemGroup>
     <ClCompile Include="graph.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\p2p-Gnutella08.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
